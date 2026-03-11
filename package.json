@@ -1,0 +1,15 @@
+{
+  "name": "yian-elderly-service-site",
+  "version": "1.0.0",
+  "description": "颐安康养服务中心官网预约后台",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.15"
+  }
+}
+

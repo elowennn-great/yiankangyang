@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>预约与联系 - 颐安康养服务中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="联系颐安康养服务中心，预约上门服务或咨询居家养老方案。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 18px;
+      }
+      @media (max-width: 880px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-card {
+        background: var(--card-bg);
+        border-radius: var(--radius-lg);
+        padding: 18px 18px 4px;
+        box-shadow: var(--shadow-soft);
+      }
+      .contact-label {
+        font-size: 0.96rem;
+        margin-bottom: 4px;
+      }
+      .contact-input,
+      .contact-textarea,
+      .contact-select {
+        width: 100%;
+        padding: 9px 10px;
+        border-radius: 10px;
+        border: 1px solid #e2d6c2;
+        font-size: 0.98rem;
+        margin-bottom: 10px;
+      }
+      .contact-textarea {
+        min-height: 80px;
+        resize: vertical;
+      }
+      .contact-tip {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <div class="container">
+          <div class="nav">
+            <a href="index.html" class="brand">
+              <div class="brand-mark">颐</div>
+              <div class="brand-text">
+                <span class="brand-text-main">颐安康养服务中心</span>
+                <span class="brand-text-sub">上门照护 · 居家养老 · 社区守护</span>
+              </div>
+            </a>
+            <button class="nav-toggle" aria-label="展开菜单">☰</button>
+            <nav class="nav-links">
+              <a href="index.html" class="nav-link">首页</a>
+              <a href="service-home.html" class="nav-link">居家保洁</a>
+              <a href="service-health.html" class="nav-link">健康服务</a>
+              <a href="service-chronic.html" class="nav-link">慢病随访</a>
+              <a href="service-value.html" class="nav-link">增值服务</a>
+              <a href="about.html" class="nav-link">关于我们</a>
+              <a href="contact.html" class="nav-link nav-cta active">一键预约</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container">
+            <div class="section-header" style="margin-bottom: 14px;">
+              <h1 class="section-title">预约与联系</h1>
+              <span class="section-tag">欢迎子女或社区工作人员代为联系</span>
+            </div>
+            <p class="section-desc">
+              您可以通过下方表单简单填写基本信息，我们的服务顾问会在工作时间内与您电话确认具体需求；也可直接拨打电话或通过微信添加详细沟通。
+            </p>
+
+            <div class="contact-grid" style="margin-top: 18px;">
+              <div class="contact-card">
+                <h2 class="card-title" style="margin-bottom: 10px;">快速预约意向</h2>
+                <p class="contact-tip">
+                  表单提交后，系统会自动帮您生成一封发送到客服邮箱的邮件草稿，您确认内容无误后点击发送即可。表单仅用于提前了解情况和回访，请勿填写过多敏感隐私信息。
+                </p>
+                <form id="contactForm">
+                  <label class="contact-label" for="contactName">联系人姓名（可填子女）</label>
+                  <input
+                    class="contact-input"
+                    id="contactName"
+                    name="联系人姓名"
+                    type="text"
+                    placeholder="如：王先生 / 张女士"
+                    required
+                  />
+
+                  <label class="contact-label" for="contactPhone">联系电话</label>
+                  <input
+                    class="contact-input"
+                    id="contactPhone"
+                    name="联系电话"
+                    type="tel"
+                    placeholder="用于回访确认预约"
+                    required
+                  />
+
+                  <label class="contact-label" for="serviceType">意向服务</label>
+                  <select id="serviceType" name="意向服务" class="contact-select" required>
+                    <option value="">请选择</option>
+                    <option value="居家保洁">居家保洁</option>
+                    <option value="社区体检/上门轻体检">社区体检/上门轻体检</option>
+                    <option value="慢病专项随访">慢病专项随访</option>
+                    <option value="代购服务">代购服务</option>
+                    <option value="陪诊服务">陪诊服务</option>
+                    <option value="组合服务/暂不确定">组合服务/暂不确定</option>
+                  </select>
+
+                  <label class="contact-label" for="elderInfo">老人基本情况（选填）</label>
+                  <textarea
+                    id="elderInfo"
+                    name="老人基本情况"
+                    class="contact-textarea"
+                    placeholder="如：78岁，独居，患有高血压与糖尿病，行动较缓慢，希望每周上门 1 次。"
+                  ></textarea>
+
+                  <button type="submit" class="btn-primary" style="margin-top: 6px; margin-bottom: 14px;">
+                    提交预约意向
+                  </button>
+                  <p class="contact-tip">我们通常会在 2 小时内（最晚不超过次日）与您取得联系。</p>
+                </form>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">其他联系方式</h2>
+                  <span class="card-tag">欢迎多渠道联系</span>
+                </div>
+                <div class="card-content">
+                  <p><strong>客服电话：</strong>18630221995</p>
+                  <p><strong>服务时间：</strong>每日 8:00–20:00（如遇紧急情况可 24 小时留言）</p>
+                  <p><strong>服务范围：</strong>当前主要覆盖城区部分街道/社区，具体可来电咨询。</p>
+                  <p class="hint-text">
+                    如需上门前勘（评估家居安全与老人需求），可与客服约定时间，将有照护员与评估人员一同上门，评估不强制后续购买任何服务。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <div class="footer-brand">颐安康养服务中心</div>
+            <div>每一次来电和留言，我们都当作一件重要的家事来处理。</div>
+          </div>
+          <div class="footer-contact">
+            <span>客服电话：18630221995</span>
+            <span>微信：请电话联系获取官方微信号</span>
+          </div>
+        </div>
+      </footer>
+
+      <button class="back-to-top" aria-label="返回顶部">↑</button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+  </html>
+
